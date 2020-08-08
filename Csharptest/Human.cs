@@ -75,6 +75,19 @@ namespace Csharptest
             output += "\nWeight: " + this.GetWeight();
             return output;
         }
+
+        public virtual void Write()
+        {
+            Console.WriteLine("Hello,write name)");
+            string input = Console.ReadLine();
+            this.SetName(input);
+            Console.WriteLine("Write weight");
+            input = Console.ReadLine();
+            this.SetWeight(Int32.Parse(input));
+            Console.WriteLine("Write age");
+            input = Console.ReadLine();
+            this.SetAge(Int32.Parse(input));
+        }
     };
 
     class Student : Human
@@ -125,6 +138,12 @@ namespace Csharptest
             return output;
         }
 
+        public override void Write()
+        {
+            base.Write();
+            Console.WriteLine("\nWrite university name");
+            this.SetUniversityName(Console.ReadLine());
+        }
     }
 }
 
